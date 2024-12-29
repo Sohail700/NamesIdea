@@ -26,8 +26,7 @@ dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: assets/icons/icon.jpeg
-
+  image_path: assets/icons/fav.jpg
 flutter:
   uses-material-design: true
   assets:
