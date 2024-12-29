@@ -18,13 +18,16 @@
 Here are some screenshots of the app:
 
 ### Main Screen (Generator Page)
-![Main Screen](path/to/screenshot1.png)
+![Screenshot 2024-12-28 154054](https://github.com/user-attachments/assets/3c8c4243-3a6f-4a4f-bd7c-b6c955b04e3a)
+
 
 ### Favorites Page
-![Favorites Page](path/to/screenshot2.png)
+![Screenshot 2024-12-28 154121](https://github.com/user-attachments/assets/120cdb27-4e7c-40c6-a719-91964994b7c6)
+
 
 ### History Screen
-![History Screen](path/to/screenshot3.png)
+![Screenshot 2024-12-28 154141](https://github.com/user-attachments/assets/ac31cdaa-6450-4535-bdc4-8f4a0c9f78fb)
+
 
 ---
 
