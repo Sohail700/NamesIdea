@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -109,6 +110,8 @@ class _MyHomePageState extends State<MyHomePage> {
       case 1:
         page = FavoritesPage();
         break;
+      case 2:
+        page = AboutPage();
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -139,6 +142,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         icon: Icon(Icons.favorite),
                         label: 'Favorites',
                       ),
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.person),
+                        label: 'About',
+                      ),
                     ],
                     currentIndex: selectedIndex,
                     onTap: (value) {
@@ -165,6 +172,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         icon: Icon(Icons.favorite),
                         label: Text('Favorites'),
                       ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.person),
+                        label: Text('About'),
+                      ),
                     ],
                     selectedIndex: selectedIndex,
                     onDestinationSelected: (value) {
@@ -181,6 +192,119 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
     );
+  }
+}
+
+class AboutPage extends StatelessWidget {
+  const AboutPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "About Me",
+              style: theme.textTheme.headlineMedium?.copyWith(
+                color: theme.colorScheme.primary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "I am Sohail Khan, a Computer Science student passionate about creating efficient and user-friendly web and mobile applications. "
+              "I have experience in front-end technologies like Flutter, React, and JavaScript, as well as backend skills in Node.js and REST APIs.",
+              style: theme.textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 10),
+            Text(
+              "Some of my projects include:\n"
+              "- A responsive blog site using HTML, CSS, and JavaScript.\n"
+              "- A 'Company URL Checker' browser extension.\n"
+              "- An ongoing 'Daily Tafsir' app for Quranic reflections.",
+              style: theme.textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Connect with me on:",
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            Column(
+              children: [
+                _buildSocialLink(
+                  context: context,
+                  icon: Icons.code,
+                  text: "GitHub",
+                  url: "https://github.com/sohail700",
+                ),
+                SizedBox(height: 10),
+                _buildSocialLink(
+                  context: context,
+                  icon: Icons.photo_camera,
+                  text: "Instagram",
+                  url: "https://instagram.com/sohaylkh",
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Thank you for using the Namer App! Feel free to explore and enjoy the features.",
+              style: theme.textTheme.bodySmall?.copyWith(
+                fontStyle: FontStyle.italic,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSocialLink({
+    required BuildContext context,
+    required IconData icon,
+    required String text,
+    required String url,
+  }) {
+    var theme = Theme.of(context);
+
+    return GestureDetector(
+      onTap: () => _launchUrl(url),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, color: theme.colorScheme.primary),
+          SizedBox(width: 8),
+          Text(
+            text,
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: theme.colorScheme.primary,
+              decoration: TextDecoration.underline,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _launchUrl(String url) async {
+    final uri = Uri.parse(url);
+    try {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } catch (e) {
+      debugPrint('Could not launch $url: $e');
+    }
   }
 }
 
