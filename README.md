@@ -43,4 +43,8 @@ Here are some screenshots of the app:
 1. **Clone the repository** to your local machine:
    ```bash
    git clone https://github.com/Sohail700/NamesIdea.git
-
+   
+2. **Download From Release** to your local Device
+   ```bash
+   -Go to release section.
+   -click apk-release.apk and Downloading will start.
