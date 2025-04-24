@@ -1,5 +1,5 @@
 # FavWord
-
+You want unique name for your business there search is over! 😁
 **FavWord** is a simple Flutter application that generates random word pairs and allows users to save their favorites for later viewing. It also offers a history of previously generated word pairs. The app features an easy-to-use interface and is designed to work on both mobile and tablet devices.
 
 ---
