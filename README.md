@@ -90,10 +90,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📱 Get in Touch
 
 If you have any questions or suggestions, feel free to reach out:
-
-- [Twitter](https://twitter.com/yourusername)
-- [LinkedIn](https://linkedin.com/in/yourusername)
-- Email: your.email@example.com
+- Email: sohail.khan196in@gmail.com
 
 ---
 
@@ -104,13 +101,3 @@ Here's what’s coming next in **FavWord**:
 - **More Word Categories**: Choose from various word categories (e.g., business, fun, tech).
 - **User Accounts**: Save your favorites and history across multiple devices.
 - **Dark Mode**: Coming soon for a better nighttime experience.
-
----
-
-### Badges (Optional)
-
-You can add some cool badges to make your README pop! Here’s an example:
-
-![GitHub license](https://img.shields.io/github/license/Sohail700/NamesIdea)
-![Issues](https://img.shields.io/github/issues/Sohail700/NamesIdea)
-![Forks](https://img.shields.io/github/forks/Sohail700/NamesIdea)
